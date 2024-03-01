@@ -1,3 +1,4 @@
+import { get } from "./getfunc.js"
 const baseUrl = 'https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks'
 
 const header = {
@@ -8,10 +9,11 @@ async function post() {
     const text = document.querySelector("input").value
     
     const content = {
-        assigned: "",
-        category: "dev frontend",
+        assigned: "none",
+        category: "ux",
         status: "to do",
         task: text,
+        
     }
     console.log(content)
 
@@ -27,7 +29,7 @@ async function post() {
     const res = await fetch(url, options);
     const data = await res.json();
     console.log(data);
-   
+
 }
 
 export {post}

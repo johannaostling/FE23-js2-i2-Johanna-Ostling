@@ -60,7 +60,6 @@ header {
 }
 .cards{
     width: 30%;
-    height: 350px;
     background-color: whitesmoke;
     box-shadow: 5px 5px rgba(169, 169, 169, 0.252);
     border-radius: 10px;

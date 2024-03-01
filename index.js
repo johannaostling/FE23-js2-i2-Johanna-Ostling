@@ -6,15 +6,15 @@ const header = {
     "Content-type": "application/json; charset=UTF-8",
 }
 
-
+get()
 const formEl = document.querySelector("form")
 
 formEl.addEventListener("submit", handleform)
-function handleform(event){
+async function handleform(event){
     event.preventDefault()
     console.log("i handleForm")
 
-    get()
+    
 
     // const text = document.querySelector("input").value
     
@@ -26,11 +26,33 @@ function handleform(event){
     // }
     // console.log(content)
 
-    post()
+    await post()
     get()
 }
 
+// const todoContainer = document.querySelector("#todo")
+// todoContainer.addEventListener('click', changetodo)
 
+// async function changetodo(event){
+//     console.log("i changetodo funk")
+    
+//     const url= baseUrl + ".json";
+//     const res = await fetch(url);
+//     const data = await res.json();
+//     console.log(data)
+
+//     for (const key in data) {
+//         console.log(key, data[key].assigned);
+//         console.log(event.target.data[key].assigned)
+
+        // const name = data[key].task;
+        // const keyEl = document.createElement("h2");
+        // keyEl.id = key;
+        // keyEl.innerText = name
+
+// }
+    
+// }
 
 
 // async function post(content) {
