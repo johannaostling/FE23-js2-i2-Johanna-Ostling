@@ -26,6 +26,9 @@ header {
      border-color: rgb(195, 177, 215);
      
 }
+.purpleclass{
+    background-color: rgb(195, 177, 225);
+}
 .orange{
     background-color: rgb(230, 169, 112);
     font-size: medium;
@@ -35,6 +38,9 @@ header {
     border-style: solid;
     border-color: rgb(230, 169, 100);
 }
+.orangeclass{
+    background-color: rgb(230, 169, 112)
+}
 .blue{
     background-color: rgb(167, 199, 231);
     font-size: medium;
@@ -43,6 +49,9 @@ header {
     border-style: solid;
     border-color: rgb(167, 199, 221);
 
+}
+.blueclass{
+    background-color: rgb(167, 199, 231)
 }
 .border{
     display: flex;
