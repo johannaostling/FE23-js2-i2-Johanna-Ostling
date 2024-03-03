@@ -18,16 +18,42 @@ async function handleform(event){
 }
 
 const todoContainer = document.querySelector("#todo")
-todoContainer.addEventListener('click', changetodo)
+todoContainer.addEventListener('click', function (event){
+    console.log(event.target.id)
+    const id = event.target.id
+    console.log(id)
+})
 
-async function changetodo(event){
-    console.log("i changetodo funk")
+
+// async function changetodo(event)
+// {const element = event.currentTarget;
+// let text = event.currentTarget.tagName;}
 
 
-    let text = event.target.tagName;
-    document.getElementById("#todo").innerHTML = text;
 
-}
+
+
+
+// async function patch(id){
+//     const url = baseUrl + id;
+    
+//     const name = document.querySelector("input").value
+
+//     const content = {
+//         assigned: name,
+        
+//     }
+    
+//     const options = {
+//         method: "POST",
+//         body: JSON.stringify(content),
+//         headers: header,
+//     };
+
+//     const res = await fetch(url, options);
+//     const data = await res.json();
+//     console.log(data);
+// }
 
 
 
