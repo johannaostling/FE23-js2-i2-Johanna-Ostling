@@ -1,3 +1,4 @@
+import { addinput } from "./addinput.js";
 const baseUrl =
   "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks";
 
@@ -21,13 +22,23 @@ async function get() {
     if (data[key].status == "to do") {
       if (data[key].category == "ux") {
         keyEl.classList.add("orangeclass");
-      } else if (data[key].category == "dev frontend") {
+
+      } 
+      else if (data[key].category == "dev frontend") {
         keyEl.classList.add("purpleclass");
-      } else if (data[key].category == "dev backend") {
+
+      } 
+      else if (data[key].category == "dev backend") {
         keyEl.classList.add("blueclass");
       }
       todoContainer.append(keyEl);
+      addinput(todoContainer)
       todoContainer.append.createElement
+      
+      // const inputEl = document.createElement("input");
+      // inputEl.type = "text";
+      // inputEl.classList.add("input")
+      // todoContainer.appendChild(inputEl);
     } 
     else if (data[key].status == "in progress") {
       if (data[key].category == "ux") {

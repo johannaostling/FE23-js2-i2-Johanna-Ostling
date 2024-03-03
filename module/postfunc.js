@@ -1,4 +1,4 @@
-import { get } from "./getfunc.js"
+
 const baseUrl = 'https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks'
 
 const header = {

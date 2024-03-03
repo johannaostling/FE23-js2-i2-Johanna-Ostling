@@ -13,96 +13,21 @@ formEl.addEventListener("submit", handleform)
 async function handleform(event){
     event.preventDefault()
     console.log("i handleForm")
-
-    
-
-    // const text = document.querySelector("input").value
-    
-    // const content = {
-    //     assigned: "",
-    //     category: "dev frontend",
-    //     status: "to do",
-    //     task: text,
-    // }
-    // console.log(content)
-
     await post()
     get()
 }
 
-// const todoContainer = document.querySelector("#todo")
-// todoContainer.addEventListener('click', changetodo)
+const todoContainer = document.querySelector("#todo")
+todoContainer.addEventListener('click', changetodo)
 
-// async function changetodo(event){
-//     console.log("i changetodo funk")
-    
-//     const url= baseUrl + ".json";
-//     const res = await fetch(url);
-//     const data = await res.json();
-//     console.log(data)
-
-//     for (const key in data) {
-//         console.log(key, data[key].assigned);
-//         console.log(event.target.data[key].assigned)
-
-        // const name = data[key].task;
-        // const keyEl = document.createElement("h2");
-        // keyEl.id = key;
-        // keyEl.innerText = name
-
-// }
-    
-// }
+async function changetodo(event){
+    console.log("i changetodo funk")
 
 
-// async function post(content) {
-//     const url = baseUrl + "/.json";
+    let text = event.target.tagName;
+    document.getElementById("#todo").innerHTML = text;
 
-//     const options = {
-//         method: "POST",
-//         body: JSON.stringify(content),
-//         headers: header,
-//     };
-
-//     const res = await fetch(url, options);
-//     const data = await res.json();
-//     console.log(data);
-   
-// }
+}
 
 
 
-
-
-
-
-// const todoContainer = document.querySelector("#todo")
-// const inprogContainer = document.querySelector("#inprog")
-// const doneContainer = document.querySelector("#done")
-// async function get(){
-//     const url= baseUrl + ".json";
-//     const res = await fetch(url);
-//     const data = await res.json();
-//     console.log(data)
-
-//     for (const key in data) {
-//         console.log(key, data[key].task);
-//         const name = data[key].task;
-//         const keyEl = document.createElement("h2");
-//         keyEl.id = key;
-//         keyEl.innerText = name
-
-
-//         if (data[key].status == "to do"){
-
-
-//             todoContainer.append(keyEl)
-//         }
-//         else if(data[key].status == "in progress"){
-//             inprogContainer.append(keyEl)
-//         }
-//         else if(data[key].status == "done")
-//             doneContainer.append(keyEl)
-        
-//     }
-// }
