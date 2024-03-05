@@ -22,25 +22,19 @@ async function get() {
     if (data[key].status == "to do") {
       if (data[key].category == "ux") {
         keyEl.classList.add("orangeclass");
-
-      } 
-      else if (data[key].category == "dev frontend") {
+      } else if (data[key].category == "dev frontend") {
         keyEl.classList.add("purpleclass");
-
-      } 
-      else if (data[key].category == "dev backend") {
+      } else if (data[key].category == "dev backend") {
         keyEl.classList.add("blueclass");
       }
       todoContainer.append(keyEl);
-      addinput(todoContainer)
+      addinput(todoContainer);
 
-      
       // const inputEl = document.createElement("input");
       // inputEl.type = "text";
       // inputEl.classList.add("input")
       // todoContainer.appendChild(inputEl);
-    } 
-    else if (data[key].status == "in progress") {
+    } else if (data[key].status == "in progress") {
       if (data[key].category == "ux") {
         keyEl.classList.add("orangeclass");
       } else if (data[key].category == "dev frontend") {
@@ -49,8 +43,7 @@ async function get() {
         keyEl.classList.add("blueclass");
       }
       inprogContainer.append(keyEl);
-    } 
-    else if (data[key].status == "done") {
+    } else if (data[key].status == "done") {
       if (data[key].category == "ux") {
         keyEl.classList.add("orangeclass");
       } else if (data[key].category == "dev frontend") {
