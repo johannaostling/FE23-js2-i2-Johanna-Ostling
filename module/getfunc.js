@@ -1,5 +1,6 @@
 import { addinput } from "./addinput.js";
 import { patchinprog } from "./patchinprog.js";
+import { deleting } from "./delete.js";
 const baseUrl =
   "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
@@ -65,6 +66,7 @@ async function get() {
       }
       pName.innerText = data[key].assigned
       divcontain.append(keyEl, pName)
+      deleting(divcontain, key)
       doneContainer.append(divcontain);
 
     }
