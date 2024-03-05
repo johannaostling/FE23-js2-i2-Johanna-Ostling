@@ -1,10 +1,12 @@
 import { addinput } from "./addinput.js";
+import { patchinprog } from "./patchinprog.js";
 const baseUrl =
   "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
 const todoContainer = document.querySelector("#todo");
 const inprogContainer = document.querySelector("#inprog");
 const doneContainer = document.querySelector("#done");
+
 
 async function get() {
   const url = baseUrl + ".json";
@@ -32,28 +34,39 @@ async function get() {
       addinput(divcontain, key);
       todoContainer.append(divcontain);
 
-      // const inputEl = document.createElement("input");
-      // inputEl.type = "text";
-      // inputEl.classList.add("input")
-      // todoContainer.appendChild(inputEl);
-    } else if (data[key].status == "in progress") {
+    } 
+    else if (data[key].status == "in progress") {
+      const divcontain = document.createElement("div")
+      const pName = document.createElement("p")
       if (data[key].category == "ux") {
-        keyEl.classList.add("orangeclass");
+        divcontain.classList.add("orangeclass");
       } else if (data[key].category == "dev frontend") {
-        keyEl.classList.add("purpleclass");
+        divcontain.classList.add("purpleclass");
       } else if (data[key].category == "dev backend") {
-        keyEl.classList.add("blueclass");
+        divcontain.classList.add("blueclass");
       }
-      inprogContainer.append(keyEl);
-    } else if (data[key].status == "done") {
+
+      pName.innerText = data[key].assigned
+      divcontain.append(keyEl, pName)
+      patchinprog(divcontain, key)
+      inprogContainer.append(divcontain);
+
+    } 
+    
+    else if (data[key].status == "done") {
+      const divcontain = document.createElement("div")
+      const pName = document.createElement("p")
       if (data[key].category == "ux") {
-        keyEl.classList.add("orangeclass");
+        divcontain.classList.add("orangeclass");
       } else if (data[key].category == "dev frontend") {
-        keyEl.classList.add("purpleclass");
+        divcontain.classList.add("purpleclass");
       } else if (data[key].category == "dev backend") {
-        keyEl.classList.add("blueclass");
+        divcontain.classList.add("blueclass");
       }
-      doneContainer.append(keyEl);
+      pName.innerText = data[key].assigned
+      divcontain.append(keyEl, pName)
+      doneContainer.append(divcontain);
+
     }
   }
 }

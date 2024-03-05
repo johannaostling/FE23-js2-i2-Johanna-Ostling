@@ -1,5 +1,4 @@
 import { patch } from "./patch.js";
-import { get } from "./getfunc.js";
 
 function addinput(place, key) {
   const forminput = document.createElement("form");
@@ -21,8 +20,9 @@ function addinput(place, key) {
     // console.log(event.target.id);
     // const id = event.target.id;
     console.log("körs");
+    
 
-    await patch(key);
+    await patch(key, inputEl.value);
 
   });
 }

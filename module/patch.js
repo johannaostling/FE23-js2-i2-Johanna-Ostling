@@ -5,10 +5,10 @@ const header = {
   "Content-type": "application/json; charset=UTF-8",
 };
 
-async function patch(id) {
+async function patch(id, name) {
   const url = baseUrl + id + ".json";
 
-  const name = document.querySelector("input").value;
+  // const name = document.querySelector("input").value;
 
   const content = {
     assigned: name,
