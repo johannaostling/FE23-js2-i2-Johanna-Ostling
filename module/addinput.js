@@ -1,4 +1,5 @@
 import { patch } from "./patch.js";
+import { get } from "./getfunc.js";
 
 function addinput(place, key) {
   const forminput = document.createElement("form");
@@ -10,7 +11,7 @@ function addinput(place, key) {
   const btnEl = document.createElement("button");
   btnEl.classList.add("input");
   btnEl.innerText = ">>>";
-  forminput.append(inputEl, btnEl)
+  forminput.append(inputEl, btnEl);
   place.append(forminput);
 
   console.log(key);
@@ -22,6 +23,7 @@ function addinput(place, key) {
     console.log("körs");
 
     await patch(key);
+
   });
 }
 

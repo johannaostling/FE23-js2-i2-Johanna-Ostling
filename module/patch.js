@@ -6,7 +6,7 @@ const header = {
 };
 
 async function patch(id) {
-  const url = baseUrl + id;
+  const url = baseUrl + id + ".json";
 
   const name = document.querySelector("input").value;
 
