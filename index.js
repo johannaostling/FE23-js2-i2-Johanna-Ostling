@@ -18,35 +18,9 @@ async function handleform(event) {
   get();
 }
 
-// const todoContainer = document.querySelector("#todo");
-// todoContainer.addEventListener("click", function (event) {
-//   console.log(event.target.id);
-//   const id = event.target.id;
-//   console.log(id);
-// });
+
 
 // async function changetodo(event)
 // {const element = event.currentTarget;
 // let text = event.currentTarget.tagName;}
 
-// async function patch(id){
-//     const url = baseUrl + id;
-
-//     const name = document.querySelector("input").value
-
-//     const content = {
-//         assigned: name,
-//         status: "in progress"
-
-//     }
-
-//     const options = {
-//         method: "PATCH",
-//         body: JSON.stringify(content),
-//         headers: header,
-//     };
-
-//     const res = await fetch(url, options);
-//     const data = await res.json();
-//     console.log(data);
-// }
