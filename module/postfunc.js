@@ -7,10 +7,11 @@ const header = {
 async function post() {
     
     const text = document.querySelector("input").value
-    
+    const categoryvalue = document.getElementById("optionvalue").value
+
     const content = {
         assigned: "none",
-        category: "ux",
+        category: categoryvalue,
         status: "to do",
         task: text,
         
