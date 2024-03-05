@@ -1,20 +1,27 @@
-function addinput(place) {
+import { patch } from "./patch.js";
+
+function addinput(place, key) {
   const forminput = document.createElement("form");
 
   const inputEl = document.createElement("input");
   inputEl.type = "text";
   inputEl.classList.add("input");
-  place.appendChild(inputEl);
 
   const btnEl = document.createElement("button");
   btnEl.classList.add("input");
   btnEl.innerText = ">>>";
-  place.appendChild(btnEl);
+  forminput.append(inputEl, btnEl)
+  place.append(forminput);
 
-  forminput.addEventListener("click", function (event) {
-    console.log(event.target.id);
-    const id = event.target.id;
-    console.log(id);
+  console.log(key);
+
+  forminput.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    // console.log(event.target.id);
+    // const id = event.target.id;
+    console.log("körs");
+
+    await patch(key);
   });
 }
 

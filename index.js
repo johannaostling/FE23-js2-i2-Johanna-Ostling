@@ -1,7 +1,7 @@
 import { get } from "./module/getfunc.js";
 import { post } from "./module/postfunc.js";
 const baseUrl =
-  "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks";
+  "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
 const header = {
   "Content-type": "application/json; charset=UTF-8",
@@ -36,11 +36,12 @@ async function handleform(event) {
 
 //     const content = {
 //         assigned: name,
+//         status: "in progress"
 
 //     }
 
 //     const options = {
-//         method: "POST",
+//         method: "PATCH",
 //         body: JSON.stringify(content),
 //         headers: header,
 //     };

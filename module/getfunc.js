@@ -1,6 +1,6 @@
 import { addinput } from "./addinput.js";
 const baseUrl =
-  "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks";
+  "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
 const todoContainer = document.querySelector("#todo");
 const inprogContainer = document.querySelector("#inprog");
@@ -10,25 +10,27 @@ async function get() {
   const url = baseUrl + ".json";
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
 
   for (const key in data) {
-    console.log(key, data[key].task);
+    // console.log(key, data[key].task);
     const name = data[key].task;
     const keyEl = document.createElement("h2");
     keyEl.id = key;
     keyEl.innerText = name;
 
     if (data[key].status == "to do") {
+      const divcontain = document.createElement("div")
       if (data[key].category == "ux") {
-        keyEl.classList.add("orangeclass");
+        divcontain.classList.add("orangeclass");
       } else if (data[key].category == "dev frontend") {
-        keyEl.classList.add("purpleclass");
+        divcontain.classList.add("purpleclass");
       } else if (data[key].category == "dev backend") {
-        keyEl.classList.add("blueclass");
+        divcontain.classList.add("blueclass");
       }
-      todoContainer.append(keyEl);
-      addinput(todoContainer);
+      divcontain.append(keyEl)
+      addinput(divcontain, key);
+      todoContainer.append(divcontain);
 
       // const inputEl = document.createElement("input");
       // inputEl.type = "text";
