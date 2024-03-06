@@ -1,3 +1,5 @@
+import { getrefresh } from "./refresh.js";
+
 const baseUrl =
   "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
@@ -24,6 +26,8 @@ async function patch(id, name) {
   const res = await fetch(url, options);
   const data = await res.json();
   console.log(data);
+
+  getrefresh()
 }
 
 export { patch };

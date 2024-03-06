@@ -1,3 +1,5 @@
+import { getrefresh } from "./refresh.js";
+
 const baseUrl =
   "https://scrum-board-4eb67-default-rtdb.europe-west1.firebasedatabase.app/tasks/";
 
@@ -21,6 +23,8 @@ function deleting(place, id){
 
     const res = await fetch(url, options)
     const data = await res.json()
+
+    getrefresh
 })
 }
 export {deleting}
