@@ -13,7 +13,7 @@ async function get() {
   const url = baseUrl + ".json";
   const res = await fetch(url);
   const data = await res.json();
-  // console.log(data);
+  console.log(data);
 
   for (const key in data) {
     // console.log(key, data[key].task);

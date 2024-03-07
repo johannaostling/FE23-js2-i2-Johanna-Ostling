@@ -27,7 +27,7 @@ async function patch(id, name) {
   const data = await res.json();
   console.log(data);
 
-  getrefresh()
+  await getrefresh()
 }
 
 export { patch };
