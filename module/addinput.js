@@ -5,6 +5,7 @@ function addinput(place, key) {
 
   const inputEl = document.createElement("input");
   inputEl.type = "text";
+  inputEl.placeholder = "enter name"
   inputEl.classList.add("input");
 
   const btnEl = document.createElement("button");
